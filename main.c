@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*AÇIK ARTTIRMA PROGRAMI*/
+/*AÃ‡IK ARTTIRMA PROGRAMI*/
 
 typedef struct {
 	
-	/*Teklif Miktarı ve Teklif No değişkenlerini tanımladım.*/
+    /*Teklif MiktarÄ± ve Teklif No deÄŸiÅŸkenlerini tanÄ±mladÄ±m.*/
     int teklifMiktari;
     int teklifNo;
     
@@ -15,38 +15,38 @@ typedef struct {
 
 int main(){
 	
-	/*Katılımcı Sayısı değişkenini tanımladım.*/
+    /*KatÄ±lÄ±mcÄ± SayÄ±sÄ± deÄŸiÅŸkenini tanÄ±mladÄ±m.*/
     int katilimciSayisi;
 
-    /*Kullanıcıdan scanf fonksiyonu ile Katılımcı Sayısını girmesini istedim.Printf fonksiyonu ile ekrana yazdırdım.*/
+    /*KullanÄ±cÄ±dan scanf fonksiyonu ile KatÄ±lÄ±mcÄ± SayÄ±sÄ±nÄ± girmesini istedim.Printf fonksiyonu ile ekrana yazdÄ±rdÄ±m.*/
     printf("Katilimci sayisini giriniz:");
     scanf("%d",&katilimciSayisi);
 
-    /*Yanlış katılımcı sayısı girilmesi durumunda programın sonlanması için if koşulunu kullandım.*/
+    /*YanlÄ±ÅŸ katÄ±lÄ±mcÄ± sayÄ±sÄ± girilmesi durumunda programÄ±n sonlanmasÄ± iÃ§in if koÅŸulunu kullandÄ±m.*/
     if(katilimciSayisi<=0){
     	
-    	/*Geçersiz kullanıcı sayısı girildiğini ekrana yazdırdım.*/
+    	/*GeÃ§ersiz kullanÄ±cÄ± sayÄ±sÄ± girildiÄŸini ekrana yazdÄ±rdÄ±m.*/
         printf("Gecersiz katilimci sayisi. Program sona eriyor.\n");
         
         return 1;
         
     }
 
-    /*Katılımcı Satısına göre teklifler için bir dizi oluşturdum.*/
+    /*KatÄ±lÄ±mcÄ± SatÄ±sÄ±na gÃ¶re teklifler iÃ§in bir dizi oluÅŸturdum.*/
     Teklif teklifler[katilimciSayisi];
     
-    /*Değişkenleri tanımladım.*/
+    /*DeÄŸiÅŸkenleri tanÄ±mladÄ±m.*/
     float enYuksekTeklif=-1.0;
     int kazananNo=-1;
     float odeme;
 
-    /*Kullanıcıdan teklifleri girmesini istedim.*/
+    /*KullanÄ±cÄ±dan teklifleri girmesini istedim.*/
     printf("Acik artirma icin teklifleri giriniz:\n");
 
-    /*Değişken tanımladım.*/
+    /*DeÄŸiÅŸken tanÄ±mladÄ±m.*/
     int i;
     
-    /*Katılımcı Sayısının birer birer arttırarak kullanıcının girmesini sağlayan for dögüsünü kullandım.*/
+    /*KatÄ±lÄ±mcÄ± SayÄ±sÄ±nÄ±n birer birer arttÄ±rarak kullanÄ±cÄ±nÄ±n girmesini saÄŸlayan for dÃ¶gÃ¼sÃ¼nÃ¼ kullandÄ±m.*/
     for (i=0;i<katilimciSayisi;++i){
     	
         printf("Teklif %d miktarini ve numarasini giriniz:",i+1);
@@ -54,10 +54,10 @@ int main(){
         
     }
 
-    /*Değişken tanımladım.*/
+    /*DeÄŸiÅŸken tanÄ±mladÄ±m.*/
     int j;
     
-    /*En yüksek teklifi hesaplayan for döngüsünü kullandım.*/
+    /*En yÃ¼ksek teklifi hesaplayan for dÃ¶ngÃ¼sÃ¼nÃ¼ kullandÄ±m.*/
     for(j=0;j<katilimciSayisi;++j){
     	
         if(teklifler[j].teklifMiktari>enYuksekTeklif){
@@ -68,18 +68,18 @@ int main(){
         }
         
     }
-    /*En yüksek teklifi,kazanan kişinin numarasını ve teklif miktarını ekrana yazdırdım.*/
+    /*En yÃ¼ksek teklifi,kazanan kiÅŸinin numarasÄ±nÄ± ve teklif miktarÄ±nÄ± ekrana yazdÄ±rdÄ±m.*/
     printf("En Yuksek Teklif:%d\n",teklifler[kazananNo].teklifMiktari);
     printf("Kazanan No:%d, Teklif Miktari:%d\n",teklifler[kazananNo].teklifNo, teklifler[kazananNo].teklifMiktari);
 
-    /*Teklifi hesaplattım ve ekrana yazdırdım.*/
+    /*Teklifi hesaplattÄ±m ve ekrana yazdÄ±rdÄ±m.*/
     odeme=enYuksekTeklif*teklifler[kazananNo].teklifNo;
     printf("Odeme Tutari:%.2f\n",odeme);
     
-    /*Ödemenin yapıldığını ekrana yazdırdım.*/
+    /*Ã–demenin yapÄ±ldÄ±ÄŸÄ±nÄ± ekrana yazdÄ±rdÄ±m.*/
     printf("Odeme yapiliyor...\n");
 
-    /*Ödemenin tamamlandığını ve kazanan kişinin numarasını ekrana yazdırdım.*/
+    /*Ã–demenin tamamlandÄ±ÄŸÄ±nÄ± ve kazanan kiÅŸinin numarasÄ±nÄ± ekrana yazdÄ±rdÄ±m.*/
     printf("Odeme tamamlandi. Kazanan Kisi:%d\n",teklifler[kazananNo].teklifNo);
 
     return 0;
